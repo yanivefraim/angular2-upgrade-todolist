@@ -1,7 +1,5 @@
 <div>
   <input ng-model="newItem">
   <button ng-click="add(newItem)">Add</button>
-  <ul>
-    <li ng-repeat="todo in todos">{{todo}}</li>
-  </ul>
+  <todo-list [todos]="todos"></todo-list>
 </div>
