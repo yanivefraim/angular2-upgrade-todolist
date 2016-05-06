@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Inject } from '@angular/core';
 
 @Component({
   selector: 'todo-list',
@@ -7,5 +7,9 @@ import { Component, Input } from '@angular/core';
   </ul>`
 })
 export class TodoList {
-  @Input() todos;
+  todos;
+
+  constructor(@Inject('todosService') todosService) {
+    this.todos = todosService.getTodos();
+  }
 }
